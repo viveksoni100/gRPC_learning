@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.vivek.grpc";
+
+service user {
+
+    rpc login(loginRequest) returns(loginResponse);
+    rpc logout(empty) returns(loginResponse);
+}
+
+message loginRequest {
+
+    string username = 1;
+    string password = 2;
+}
+
+message loginResponse {
+
+    string responseMessage = 1;
+    int32 responseCode = 2;
+}
+
+message empty {
+
+}
